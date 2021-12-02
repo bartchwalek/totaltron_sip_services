@@ -31,7 +31,7 @@ $feed->handle_content_type();
         $cnt = 0;
         foreach ($feed->get_items() as $item) {
         $track = $xml->addChild('MenuItem');
-        $track->addChild('Name', $item->get_title());
+        $track->addChild('Name', substr($item->get_title(), 0, 50));
         $track->addChild('URL', $base . "?id=" . $cnt);
         $cnt++;
     }
